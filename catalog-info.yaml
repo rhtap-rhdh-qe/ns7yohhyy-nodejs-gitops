@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ns7yohhyy-nodejs-gitops
+  description: This is GitOps manifest for ns7yohhyy-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ns7yohhyy-nodejs
+    backstage.io/kubernetes-id: ns7yohhyy-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ns7yohhyy-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ns7yohhyy-nodejs
